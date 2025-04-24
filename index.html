@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Vento IoT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Monitor de Vento em Tempo Real</h1>
+        
+        <div class="server-info">
+            <span id="server-ip"></span>
+        </div>
+
+        <div class="status">
+            <div id="connection-status" class="disconnected">Desconectado</div>
+        </div>
+        
+        <div class="data-container">
+            <div class="data-card">
+                <h2>Velocidade do Vento</h2>
+                <div id="wind-speed" class="value">--</div>
+                <div class="unit">km/h</div>
+            </div>
+            
+            <div class="data-card">
+                <h2>Direção do Vento</h2>
+                <div id="wind-direction" class="value">--</div>
+                <div class="unit">graus</div>
+                <div id="direction-arrow">↑</div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="windChart"></canvas>
+        </div>
+        
+        <div class="history">
+            <h2>Últimas Atualizações</h2>
+            <div id="updates-list"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
